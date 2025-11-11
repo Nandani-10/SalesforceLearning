@@ -1,0 +1,90 @@
+// Object Methods Demo
+
+// Original object
+let person = {
+  name: "Alice",
+  age: 25,
+  city: "Delhi"
+};
+
+console.log("Original Object:", person);
+
+//  Object.keys() - Returns array of keys
+console.log("Keys:", Object.keys(person));
+
+//  Object.values() - Returns array of values
+console.log("Values:", Object.values(person));
+
+//  Object.entries() - Returns array of [key, value] pairs
+console.log("Entries:", Object.entries(person));
+
+//  Object.assign() - Copy properties from one or more objects to target
+let extraInfo = { email: "alice@example.com", age: 30 };
+let mergedPerson = Object.assign({}, person, extraInfo);
+console.log("After Object.assign:", mergedPerson);
+
+//  Object.freeze() - Make object immutable (cannot add/delete/modify properties)
+let frozenPerson = { name: "Bob", age: 40 };
+Object.freeze(frozenPerson);
+frozenPerson.age = 50; // won't change
+frozenPerson.city = "Mumbai"; // won't add
+console.log("Frozen object:", frozenPerson);
+
+//  Object.seal() - Prevent adding/deleting properties, but allows modifying existing
+let sealedPerson = { name: "Charlie", age: 35 };
+Object.seal(sealedPerson);
+sealedPerson.age = 36; // allowed
+sealedPerson.city = "Pune"; // not allowed
+console.log("Sealed object:", sealedPerson);
+
+//  Object.is() - Compares two values (like === but handles NaN)
+console.log("Object.is(10, 10):", Object.is(10, 10));
+console.log("Object.is(NaN, NaN):", Object.is(NaN, NaN));
+
+//  Object.hasOwn() - Check if object has own property
+console.log("Has own 'name'?", Object.hasOwn(person, "name"));
+console.log("Has own 'email'?", Object.hasOwn(person, "email"));
+
+//  Object.getOwnPropertyNames() - Returns all property names (including non-enumerable)
+console.log("Property names:", Object.getOwnPropertyNames(person));
+
+//  Object.getOwnPropertyDescriptors() - Returns detailed descriptors of all properties
+console.log("Property descriptors:", Object.getOwnPropertyDescriptors(person));
+
+//  Object.defineProperty() - Define or modify a property descriptor
+let obj = {};
+Object.defineProperty(obj, "id", {
+  value: 101,
+  writable: false, // cannot change
+  enumerable: true,
+  configurable: false
+});
+console.log("Defined property:", obj);
+
+//  Object.defineProperties() - Define multiple properties
+Object.defineProperties(obj, {
+  name: { value: "Demo", writable: true },
+  age: { value: 20, writable: true }
+});
+console.log("Defined multiple properties:", obj);
+
+//  Object.getPrototypeOf() - Get prototype of object
+console.log("Prototype of person:", Object.getPrototypeOf(person));
+
+//  Object.setPrototypeOf() - Set prototype of object
+let proto = { greet: () => "Hello" };
+Object.setPrototypeOf(obj, proto);
+console.log("Prototype after set:", Object.getPrototypeOf(obj));
+console.log("Access method from prototype:", obj.greet());
+
+//  Object.entries + for...of loop - iterate key-value pairs
+console.log("Iterating object:");
+for (let [key, value] of Object.entries(person)) {
+  console.log(key, ":", value);
+}
+
+//  Object.fromEntries() - Convert array of key-value pairs to object
+let arr = [["x", 10], ["y", 20]];
+let newObj = Object.fromEntries(arr);
+console.log("Object from entries:", newObj);
+
