@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.num-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+    font-size: 18px;
+}
+
+.num-pagination span {
+    cursor: pointer;
+    padding: 4px 8px;
+    color: #666;
+}
+
+.num-pagination span:hover {
+    color: #000;
+}
+
+.active-page {
+    font-weight: bold;
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.arrow {
+    font-size: 20px;
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: #000;
+}

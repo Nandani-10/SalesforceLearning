@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Send Email">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Recipient Email" value={toAddress} onchange={handleEmailChange}></lightning-input>
+            <lightning-input label="Subject" value={subject} onchange={handleSubjectChange} class="slds-m-top_medium"></lightning-input>
+            <lightning-input-rich-text label="Email Body" value={body} onchange={handleBodyChange}></lightning-input-rich-text>
+            <lightning-button label="Send Email" onclick={sendEmail} class="slds-m-top_medium"></lightning-button>
+        </div>
+    </lightning-card>
+    <lightning-button-icon icon-name="utility:close" alternative-text="Close" onclick={closeComponent} class="slds-m-left_small"></lightning-button-icon>   
+
+</template>

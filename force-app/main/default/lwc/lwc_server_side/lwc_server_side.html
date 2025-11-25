@@ -1,0 +1,42 @@
+<template>
+    <lightning-card 
+        title="Server Side LWC Creating New Account Using LWC_createacc Apex Class"
+        icon-name="standard:account">
+
+        <p class="slds-m-around_medium">
+            This is a server-side rendered Lightning Web Component.
+        </p>
+
+        <lightning-input 
+            label="Account Name" 
+            value={accname}
+            onchange={handleAccountNameChange}>
+        </lightning-input>
+
+        <lightning-input 
+            label="Account Phone" 
+            value={accphn}
+            onchange={handleAccountPhoneChange}>
+        </lightning-input> 
+
+        <lightning-input 
+            label="Account Industry" 
+            value={accind}
+            onchange={handleAccountIndustryChange}>
+        </lightning-input> 
+
+        <lightning-input 
+            label="Account Rating" 
+            value={accrat}
+            onchange={handleAccountRatingChange}>
+        </lightning-input>
+
+        <lightning-button 
+            class="slds-m-top_medium"
+            label="Create Account" 
+            variant="brand"
+            onclick={createAccount}>
+        </lightning-button>
+
+    </lightning-card>
+</template>

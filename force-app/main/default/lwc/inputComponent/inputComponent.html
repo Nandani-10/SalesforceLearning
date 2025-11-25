@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Child: Enter Numbers">
+        <lightning-input label="Number 1" type="number" value={num1} onchange={handleNum1}></lightning-input>
+        <lightning-input label="Number 2" type="number" value={num2} onchange={handleNum2}></lightning-input>
+
+        <lightning-button class="slds-m-top_small" label="Send to Parent" onclick={sendToParent}></lightning-button>
+    </lightning-card>
+</template>

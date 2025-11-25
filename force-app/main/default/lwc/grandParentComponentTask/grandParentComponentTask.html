@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Grand Parent" icon-name="standard:account">
+        <div class="slds-grid slds-gutters">
+        <div class="header-section slds-col slds-size_1-of-4">
+            <p class="counter-text">{selectedCount} of 3 Children selected</p>
+ 
+        </div>
+        <div class="reset-container slds-m-right_medium slds-col slds-size_3-of-4 ">
+            <lightning-button label="Reset All" variant="brand" onclick={handleReset} class="reset-btn">
+            </lightning-button>
+        </div>
+       
+ 
+        </div>
+        <c-parent-component-task onupdatecount={handleUpdateCount}></c-parent-component-task>
+    </lightning-card>
+</template>

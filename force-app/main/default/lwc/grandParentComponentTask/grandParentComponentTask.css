@@ -1,0 +1,21 @@
+/* grandParentComponent.css */
+ 
+/* Lightning card styling */
+lightning-card {
+    --slds-c-card-color-background: #f9fafc;
+    --slds-c-card-radius-border: 0.75rem;
+    --slds-c-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+.displayButton{
+    display: flex;
+}
+ 
+ 
+ 
+/* Counter text */
+p {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 1rem;
+}

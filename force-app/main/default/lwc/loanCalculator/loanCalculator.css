@@ -1,0 +1,6 @@
+.mycls{
+    text-align: center;
+    color: brown;
+    background-color: linen;
+    animation: backwards 5s infinite;
+}

@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Account Search with Imperation + updateRecord" icon-name="standard:account">
+
+        <div class="container">
+
+            <!-- SEARCH BAR -->
+            <lightning-input 
+                label="Search Accounts" 
+                type="text"
+                placeholder="Type account name..."
+                onchange={handleSearch}>
+            </lightning-input>
+
+            <!-- DATATABLE -->
+            <lightning-datatable 
+                key-field="Id"
+                data={accounts}
+                columns={columns}
+                draft-values={draftValues}
+                hide-checkbox-column
+                onsave={handleSave}
+                class="slds-m-top_medium">
+            </lightning-datatable>
+
+            <!-- Output message -->
+            <template if:true={message}>
+                <p class="msg">{message}</p>
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>

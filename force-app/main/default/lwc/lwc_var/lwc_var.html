@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="LWC primitive datatypes and functions">
+        <b>My name is </b> {name}
+        <b>My age is </b> {age}
+        <b>My email is </b> {email}
+        <b>my city :</b> {moreDetail.city}
+        <b>my state :</b> {moreDetail.state}
+        <b>my country :</b> {moreDetail.country}
+        <br/><br/>
+        <lightning-input label="Enter" value={num} onchange={clickme} ></lightning-input>
+        <lightning-button 
+            label="Submit" 
+            variant="success" 
+            icon-name="utility:heart" 
+            onclick={submit}>
+        </lightning-button>
+    </lightning-card>
+    <lightning-card title="Enter three numbers to find the greatest number">
+        <lightning-input label="Enter first number" ></lightning-input> {num1}
+        <lightning-input label="Enter second number" ></lightning-input> {num2}
+        <lightning-input label="Enter third number" ></lightning-input> {num3}
+        <br/><br/>
+        <lightning-button 
+            label="Find Greatest" 
+            variant="brand" 
+            icon-name="utility:check" 
+            onclick={findGreatest}>
+        </lightning-button>
+    </lightning-card>
+</template>

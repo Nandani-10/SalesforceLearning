@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Loan Calculator" icon-name="utility:money">
+        <div class="mycls">
+            <p> trying to Display images</p>
+        <img src= "!$Resorces.loancal1" alt="Loan Calculator Image" class="slds-m-around_medium"/>
+        <img src= "!$Resorces.loancal2" alt="Loan Calculator Image" class="slds-m-around_medium"/>
+        <img src= "!$Resorces.loancal3" alt="Loan Calculator Image" class="slds-m-around_medium"/>
+        </div>
+        <div class="slds-m-around_medium">
+
+            <lightning-input label="Loan Amount" type="number"
+                             onchange={handleLoanAmount}></lightning-input>
+
+            <lightning-input label="Interest Rate (%)" type="number"
+                             onchange={handleInterest}></lightning-input>
+
+            <lightning-input label="Tenure (Years)" type="number"
+                             onchange={handleTenure}></lightning-input>
+  
+            <lightning-button label="Calculate EMI"
+                              variant="brand"
+                              onclick={calculateEMI}
+                              class="slds-m-top_medium">
+            </lightning-button>
+
+            <template if:true={emi}>
+                <h2 class="slds-m-top_medium">
+                    Monthly EMI: <b>{emi}</b>
+                </h2>
+            </template>
+
+        </div>
+    </lightning-card>
+    <lightning-card title="Array Data">
+        <div class="slds-m-around_medium">
+            <template for:each={dataArray} for:item="item">
+                <p key={item.id}>{item.name} - {item.value}</p>
+            </template>
+        </div>
+    </lightning-card>
+    <template iterator:it={dataArray}>
+        <p key={it.value.id}>{it.value.name} : {it.value.value}</p>
+</template>
+</template>
+

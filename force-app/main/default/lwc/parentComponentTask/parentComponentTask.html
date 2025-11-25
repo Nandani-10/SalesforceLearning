@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Parent" icon-name="standard:user">
+        <div>
+            <p>Child One: {status.child1}</p>
+            <p>Child Two: {status.child2}</p>
+            <p>Child Three: {status.child3}</p>
+        </div>
+        <div class="slds-grid slds-gutters slds-p-around_small">
+            <c-child-component-task name="Child One" onchildtoggle={handleChildToggle}></c-child-component-task>
+            <c-child-component-task name="Child Two" onchildtoggle={handleChildToggle}></c-child-component-task>
+            <c-child-component-task name="Child Three" onchildtoggle={handleChildToggle}></c-child-component-task>
+        </div>
+    </lightning-card>
+</template>

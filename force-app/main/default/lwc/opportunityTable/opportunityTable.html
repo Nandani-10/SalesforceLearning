@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Opportunity Manager" icon-name="standard:opportunity">
+
+        <!-- Header buttons -->
+        <div class="header">
+            <lightning-button 
+                label="Add Row"
+                onclick={handleAddRow}>
+            </lightning-button>
+
+            <lightning-button 
+                label="Save All"
+                variant="brand"
+                onclick={handleSave}>
+            </lightning-button>
+        </div>
+
+        <!-- Datatable -->
+        <lightning-datatable 
+            key-field="Id"
+            data={data}
+            columns={columns}
+            draft-values={draftValues}
+            onsave={handleInlineSave}
+            onrowaction={handleRowAction}
+            hide-checkbox-column>
+        </lightning-datatable>
+
+        <!-- Number Pagination -->
+        <div class="num-pagination">
+
+            <span class="arrow" onclick={handlePrev}>&lt;</span>
+
+            <template for:each={pages} for:item="pg">
+                <span 
+                    key={pg}
+                    data-id={pg}
+                    class={getPageClass}
+                    onclick={handlePageClick}>
+                    {pg}
+                </span>
+            </template>
+
+            <span class="arrow" onclick={handleNext}>&gt;</span>
+
+        </div>
+
+    </lightning-card>
+</template>
