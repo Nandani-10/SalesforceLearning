@@ -1,0 +1,70 @@
+<template>
+    <lightning-card title="Registration Form">
+        <div class="slds-p-around_medium">
+
+            <lightning-input label="Full Name" 
+                             value={fullName} 
+                             data-id="fullName"
+                             onchange={handleChange}
+                             required>
+            </lightning-input>
+
+            <lightning-input type="email"
+                             label="Email"
+                             value={email}
+                             data-id="email"
+                             onchange={handleChange}
+                             required>
+            </lightning-input>
+
+            <lightning-input type="tel"
+                             label="Mobile Number"
+                             value={phone}
+                             data-id="phone"
+                             onchange={handleChange}
+                             pattern="[0-9]{10}"
+                             message-when-pattern-mismatch="Enter 10 digit number"
+                             required>
+            </lightning-input>
+
+            <lightning-combobox label="Country"
+                                value={country}
+                                data-id="country"
+                                options={countryOptions}
+                                onchange={handleChange}
+                                required>
+            </lightning-combobox>
+
+            <lightning-radio-group label="Gender"
+                                   options={genderOptions}
+                                   value={gender}
+                                   type="radio"
+                                   data-id="gender"
+                                   onchange={handleChange}
+                                   required>
+            </lightning-radio-group>
+
+            <lightning-textarea label="About You"
+                                value={about}
+                                data-id="about"
+                                onchange={handleChange}
+                                required>
+            </lightning-textarea>
+
+            <lightning-input type="checkbox"
+                             label="I agree to Terms & Conditions"
+                             checked={termsAccepted}
+                             data-id="terms"
+                             onchange={handleChange}>
+            </lightning-input>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Submit"
+                                  variant="brand"
+                                  onclick={handleSubmit}>
+                </lightning-button>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

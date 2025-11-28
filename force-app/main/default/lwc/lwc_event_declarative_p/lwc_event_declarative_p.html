@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="LWC Event - Declarative VLC Player" icon-name="utility:video">
+        <div class="slds-m-around_medium">
+
+            <p>Click on the buttons to increase or decrease the volume.</p>
+
+            <!-- Child Component -->
+            <c-lwc_event_declarative 
+                oneventinc={increasetheVol}
+                oneventdec={decreasetheVol}>
+            </c-lwc_event_declarative>
+
+            <p><b>Current Volume: {volume}</b></p>
+
+        </div>
+    </lightning-card>
+</template>
